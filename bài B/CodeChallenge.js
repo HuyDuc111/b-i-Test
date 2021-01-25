@@ -1,0 +1,30 @@
+let y = Math.floor(Math.random() * 10) +1;
+console.log(y);
+let a = 0;
+function Guess() {
+    let x = document.getElementById('may_man');
+    let m = x.value;
+    if(m>10||m<0){
+        alert("Sai quy định, nhập lại từ 1 đến 10");k--;
+    }
+    else{
+    if(m==y) {
+        alert("Bạn đã dự đoán đúng con số may mắn lần này là: "+y);a=1;
+    }
+    else {
+        alert("Bạn dự đoán sai");
+    }
+    } 
+}
+let k = 0;
+function count() {
+    if(k<3) Guess();
+    k++;
+    if(k>=3&&a==0) alert("Chúc bạn may mắn lần sau, đã đoán tối đa 3 lần, số may mắn là: "+y);
+}
+function enterGuess(e) {
+    if(e.key === 'Enter'){
+        e.preventDefault();
+        count();
+    }
+}
